@@ -104,11 +104,11 @@ async def start(client, message):
             file_id = mg.file_id
             files_ = await get_file_details(vj_file_id)
             files1 = files_[0]
-            title = '@VJ_Botz  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))
+            title = '@The1xTeam  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))
             size=get_size(files1.file_size)
             f_caption=files1.caption
             if f_caption is None:
-                f_caption = f"@VJ_Botz  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
+                f_caption = f"@The1xTeam  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
             if cd["update_channel_link"] != None:
                 up = cd["update_channel_link"]
                 button = [[
@@ -188,11 +188,11 @@ async def start(client, message):
             pass
         return await message.reply('No such file exist.')
     files = files_[0]
-    title = '@VJ_Botz  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
+    title = '@The1xTeam  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
     f_caption=files.caption
     if f_caption is None:
-        f_caption = f"@VJ_Botz  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
+        f_caption = f"@The1xTeam  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if cd["update_channel_link"] != None:
         up = cd["update_channel_link"]
         button = [[
@@ -212,8 +212,8 @@ async def start(client, message):
         protect_content=True if pre == 'filep' else False,
         reply_markup=reply_markup
     )
-    k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
-    await asyncio.sleep(600)
+    k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>5 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
+    await asyncio.sleep(300)
     await msg.delete()
     await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
     return   
@@ -228,7 +228,7 @@ async def settings(client, message):
     api = await client.ask(message.chat.id, "<b>Now Send Your Api</b>")
     try:
         shortzy = Shortzy(api_key=api.text, base_site=url.text)
-        link = 'https://t.me/VJ_Botz'
+        link = 'https://t.me/The1xTeam'
         await shortzy.convert(link)
     except Exception as e:
         await message.reply(f"**Error In Converting Link**\n\n<code>{e}</code>\n\n**Start The Process Again By - /settings**", reply_markup=InlineKeyboardMarkup(btn))
